@@ -1,0 +1,36 @@
+@use '../../theme/themes.scss' as *;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.label {
+  font-size: var(--font-size-body);
+  color: var(--color-text);
+}
+
+.input {
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-body);
+  color: var(--color-text);
+  outline: none;
+
+  &:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(0, 85, 255, 0.15);
+  }
+}
+
+.error {
+  border-color: #d32f2f;
+}
+
+.errorText {
+  color: #d32f2f;
+  font-size: 0.875rem;
+}

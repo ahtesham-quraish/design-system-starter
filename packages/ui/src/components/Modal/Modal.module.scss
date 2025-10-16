@@ -1,0 +1,40 @@
+@use '../../theme/themes.scss' as *;
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.content {
+  background: var(--color-background);
+  color: var(--color-text);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  max-width: 500px;
+  width: 90%;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.title {
+  margin-top: 0;
+}
+
+.close {
+  position: absolute;
+  top: var(--spacing-sm);
+  right: var(--spacing-sm);
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+.body {
+  margin-top: var(--spacing-sm);
+}

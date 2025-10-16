@@ -1,0 +1,72 @@
+/* =====================================================
+   Base Design Tokens
+   ===================================================== */
+
+/* Import generated token variables (via Style Dictionary or manual build) */
+@use '../../../tokens/dist/tokens.scss' as *;
+
+/* =====================================================
+   Light Theme (default)
+   ===================================================== */
+:root,
+[data-theme='light'] {
+  /* Colors */
+  --color-primary: #0055ff;
+  --color-on-primary: #ffffff;
+  --color-background: #ffffff;
+  --color-text: #0f172a;
+
+  /* Spacing */
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+
+  /* Radius */
+  --radius-md: 8px;
+
+  /* Typography */
+  --font-family-base: Inter, system-ui, sans-serif;
+  --font-size-body: 16px;
+
+  /* Accessibility: help browsers auto-adjust for light theme */
+  color-scheme: light;
+}
+
+/* =====================================================
+   Dark Theme
+   ===================================================== */
+[data-theme='dark'] {
+  /* Colors */
+  --color-primary: #1e90ff;
+  --color-on-primary: #ffffff;
+  --color-background: #0f172a;
+  --color-text: #f1f5f9;
+
+  /* Spacing */
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+
+  /* Radius */
+  --radius-md: 8px;
+
+  /* Typography */
+  --font-family-base: Inter, system-ui, sans-serif;
+  --font-size-body: 16px;
+
+  /* Accessibility: help browsers auto-adjust for dark theme */
+  color-scheme: dark;
+}
+
+/* =====================================================
+   Global Base Styles
+   ===================================================== */
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-body);
+  margin: 0;
+  padding: 0;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
