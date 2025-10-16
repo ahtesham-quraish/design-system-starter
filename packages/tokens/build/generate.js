@@ -1,8 +1,12 @@
-const fs = require('fs');
-const path = require('path');
-const tokens = require('../src/tokens.json');
+import fs from 'fs';
+import path from 'path';
 
-function flatten(obj, prefix='') {
+const __dirname = path.dirname(new URL(import.meta.url).pathname);
+
+// ✅ Use new JSON import syntax
+const tokens = (await import('../src/tokens.json', { with: { type: 'json' } })).default;
+
+function flatten(obj, prefix = '') {
   const out = {};
   for (const k of Object.keys(obj)) {
     const val = obj[k];
@@ -17,11 +21,13 @@ function flatten(obj, prefix='') {
 
 const flat = flatten(tokens);
 const lines = [':root {'];
-for (const [k,v] of Object.entries(flat)) {
+for (const [k, v] of Object.entries(flat)) {
   lines.push(`  --${k}: ${v};`);
 }
 lines.push('}');
+
 const distDir = path.join(__dirname, '..', 'dist');
 if (!fs.existsSync(distDir)) fs.mkdirSync(distDir, { recursive: true });
 fs.writeFileSync(path.join(distDir, 'tokens.scss'), lines.join('\n'));
-console.log('tokens.scss generated at', path.join(distDir, 'tokens.scss'));
+
+console.log('✅ tokens.scss generated at', path.join(distDir, 'tokens.scss'));

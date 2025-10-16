@@ -4,9 +4,8 @@
     "outDir": "dist",
     "rootDir": "src",
     "declaration": true,
+    "declarationMap": true,
     "types": ["jest", "node", "@testing-library/jest-dom"]
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src"]
 }

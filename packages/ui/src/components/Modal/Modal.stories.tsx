@@ -13,11 +13,14 @@ export default meta;
 type Story = StoryObj<typeof Modal>;
 
 export const Basic: Story = {
-  render: () => {
+  render: function BasicModalStory() {
     const [open, setOpen] = useState(false);
+
     return (
       <>
-        <Button variant="primary" onClick={() => setOpen(true)}>Open Modal</Button>
+        <Button variant="primary" onClick={() => setOpen(true)}>
+          Open Modal
+        </Button>
         <Modal isOpen={open} title="Example Modal" onClose={() => setOpen(false)}>
           <p>This is a modal body example.</p>
         </Modal>

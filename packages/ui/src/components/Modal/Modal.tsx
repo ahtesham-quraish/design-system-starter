@@ -22,8 +22,14 @@ const Modal: React.FC<ModalProps> = ({ isOpen, title, onClose, children }) => {
   return (
     <div className={styles.overlay} role="dialog" aria-modal="true" aria-labelledby="modal-title">
       <div className={styles.content}>
-        {title && <h2 id="modal-title" className={styles.title}>{title}</h2>}
-        <button className={styles.close} onClick={onClose} aria-label="Close modal">×</button>
+        {title && (
+          <h2 id="modal-title" className={styles.title}>
+            {title}
+          </h2>
+        )}
+        <button className={styles.close} onClick={onClose} aria-label="Close modal">
+          ×
+        </button>
         <div className={styles.body}>{children}</div>
       </div>
     </div>

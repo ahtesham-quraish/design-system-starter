@@ -2,14 +2,8 @@ import path from 'path';
 import { mergeConfig } from 'vite';
 
 export default {
-  stories: [
-    '../../../packages/ui/src/**/*.stories.@(ts|tsx|js|jsx|mdx)',
-  ],
-  addons: [
-    '@storybook/addon-essentials',
-    '@storybook/addon-a11y',
-    'storybook-dark-mode',
-  ],
+  stories: ['../../../packages/ui/src/**/*.stories.@(ts|tsx|js|jsx|mdx)'],
+  addons: ['@storybook/addon-essentials', '@storybook/addon-a11y', 'storybook-dark-mode'],
   framework: {
     name: '@storybook/react-vite',
     options: {},

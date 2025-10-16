@@ -10,7 +10,9 @@ const Input: React.FC<InputProps> = ({ label, error, id, ...props }) => {
   const inputId = id || `input-${label.replace(/\s+/g, '-').toLowerCase()}`;
   return (
     <div className={styles.wrapper}>
-      <label htmlFor={inputId} className={styles.label}>{label}</label>
+      <label htmlFor={inputId} className={styles.label}>
+        {label}
+      </label>
       <input id={inputId} className={`${styles.input} ${error ? styles.error : ''}`} {...props} />
       {error && <p className={styles.errorText}>{error}</p>}
     </div>
